@@ -1,0 +1,29 @@
+body{
+    width: 100%
+}
+
+/* styling for the info card div */
+#container{ 
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+img{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    
+
+}
