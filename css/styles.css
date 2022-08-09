@@ -19,8 +19,19 @@ body{
     justify-content: space-around;
     margin-top: 10px;
 }
+
 .input{
-    background-color: rgb(217, 217, 217);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.input1{
+   
+    width: 40%;
+}
+
+.input2{
+    width: 40%;
 }
 
 .map-container{
