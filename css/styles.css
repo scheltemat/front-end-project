@@ -8,19 +8,29 @@ body{
 }
 
 .header{
-    height: 15vh;
+    height: 25vh;
     display: flex;
-    justify-content: center;
+    padding-left: 20px;
+    justify-content: space-between;
     align-items: center;
     background-color: #0D1B2A;
     color: white;
 }
 
+.input-text{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding-top: 10px;
+  
+}
+
 .input-container{
+    height: 10vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 10px;
+    padding: 0px 10px 0px 10px;
 }
 
 .form-control{
@@ -29,11 +39,11 @@ body{
 
 .input1{
    
-    width: 40%;
+    width: 45%;
 }
 
 .input2{
-    width: 40%;
+    width: 45%;
 }
 
 .btn{
@@ -101,6 +111,7 @@ img{
 }
 
 .card{
+    max-height: 290px;
     background-color: #1B263B;
     color: white;
 }
