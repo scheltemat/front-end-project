@@ -30,7 +30,7 @@ const loadFetch = async ()=>{
     for(let B in hold){
         let currentHold = hold[B]
         let photosHold = currentHold.photos[0].photo_reference
-        let photosData = photosFetch(photosHold)
+        let photosData = await photosFetch(photosHold)
         photosData
         currentHold.business_status
         currentHold.geometry.location.lat
