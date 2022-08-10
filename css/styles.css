@@ -118,3 +118,15 @@ img{
     background-color: #1B263B;
     color: white;
 }
+/*styling for weather*/
+.weatherContainer{
+   display: flex;
+   align-items:center;
+   justify-content: space-evenly;
+   margin-top: 2%;
+   margin-bottom: 2%;
+}
+
+.cardWeather{
+    padding: 5px 5px 5px 5px
+}
