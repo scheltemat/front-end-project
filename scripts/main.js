@@ -30,7 +30,7 @@ const photosFetch = async (ref)=>{
 const loadFetch = async ()=>{
     const placesParent = await placesFetch("49.8880%2C-119.4960")
     let placesData = placesParent.results
-    let hold = {}
+    let hold = {} //i can make it gobal the reset it on fuctions start if needed
     let photosHold = []
     console.log(placesData)
     for(let A = 0; A<placesData.length;A++){
@@ -48,7 +48,7 @@ const loadFetch = async ()=>{
          // let photosData = await photosFetch(photosHold)
          // console.log(photosData)
          let eachCard =`
-         <div class="col">
+         <div class="col" id="item${B}">
                <div class="card h-100">
                   <img src="" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -77,7 +77,7 @@ const loadFetch = async ()=>{
    for(let C = 0; C<photosArr.length;C++){
       printImg[C].src = photosArr[C]
    }
-   //  
+
    //  console.log("hihi")
    //  console.log(printImg[0])
    //  printImg[0].src = await photosFetch()
