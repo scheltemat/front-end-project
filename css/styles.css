@@ -52,6 +52,8 @@ body{
 
 .map-container{
     margin-top: 10px;
+    max-height: 450px;
+    
 }
 
 .map{
@@ -63,8 +65,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding-bottom: 10px;
+    background-color: #415A77;
+    padding-top: 10px;
+    
 }
 
 .footer{
