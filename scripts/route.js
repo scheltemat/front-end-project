@@ -9,8 +9,9 @@ let searchID = document.querySelector("#searchButton")
 startID.value
 endID.value
 
-let weatherAd = ""
+let weatherAd = []
 let placeAd = []
+
 
 var service;
 
@@ -40,6 +41,20 @@ function initMap(){
   });
   searchID.onclick = () =>{
     console.log("running?")
+    geocoder = new google.maps.Geocoder();
+
+    let address = endID.value
+    geocoder.geocode( { 'address': address}, function(results, status) {
+    
+      if (status == google.maps.GeocoderStatus.OK)
+      {
+        console.log('lat long results', results);
+          // do something with the geocoded result
+          
+          weatherAd.push(results[0].geometry.location.lat()) 
+          weatherAd.push(results[0].geometry.location.lng()) 
+      }
+    })
     if(startID.value != ""&&endID.value != ""){
       displayRoute(
       startID.value,
@@ -120,8 +135,8 @@ function displayRoute(origin,destination,service,display) {
 function computeTotalDistance(result) {
   let total = 0;
   const myroute = result.routes[0];
-  console.log(myroute)
-  weatherAd = myroute.legs[0].end_address
+  // console.log(myroute)
+  // weatherAd = myroute.legs[0].end_address
   if (!myroute) {
     return;
   }
