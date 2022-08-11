@@ -59,6 +59,7 @@ function initMap(){
           weatherAd = []
           weatherAd.push(results[0].geometry.location.lat()) 
           weatherAd.push(results[0].geometry.location.lng()) 
+          console.log(weatherAd)
       }
     })
     if(startID.value != ""&&endID.value != ""){
