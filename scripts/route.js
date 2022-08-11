@@ -50,9 +50,10 @@ function initMap(){
       {
         console.log('lat long results', results);
           // do something with the geocoded result
-          
+          weatherAd = []
           weatherAd.push(results[0].geometry.location.lat()) 
           weatherAd.push(results[0].geometry.location.lng()) 
+          console.log(weatherAd)
       }
     })
     if(startID.value != ""&&endID.value != ""){
