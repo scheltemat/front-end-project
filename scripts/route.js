@@ -21,7 +21,7 @@ function initMap(){
     document.getElementById("map"),
     {
       zoom: 4,
-      center: { lat: 29.76, lng: -95.36 }, // Australia.
+      center: { lat: 39.8283, lng: -98.5795 }, // Australia.
     }
   );
 

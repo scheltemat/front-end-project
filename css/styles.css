@@ -63,8 +63,8 @@ body{
 
 .map{
     width: 100%;
-
 }
+
 
 .accordion-container{
     display: flex;
@@ -72,6 +72,7 @@ body{
     align-items: center;
     background-color: #415A77;
     padding-top: 10px;
+    padding-bottom: 10px;
     
 }
 
@@ -96,7 +97,7 @@ body{
     justify-content: center;
     margin-top: 2%;
     margin: auto;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
     align-items: center;
     background-color: #415A77;
 }
