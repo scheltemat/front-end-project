@@ -1,8 +1,18 @@
-let button = document.querySelector(".search");
-let weatherContainer = document.querySelector('.weatherContainer')
+// let button = document.querySelector(".search");
+let weathercard = document.querySelector('#weather2')
+let weatherButton = document.getElementById('weather')
 
 //added a class "end" on inpuut2 section
-let input = document.querySelector(".end");
+// let input = document.querySelector(".end");
+
+weatherButton.addEventListener('click', e=>{
+	fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=77494&days=3', options)
+	.then(response => response.json())
+	.then(response => logAPI(response))
+	.catch(err => console.error(err));
+
+
+})
 
 function logAPI (data){
     console.log(data)
@@ -40,22 +50,35 @@ function logAPI (data){
 		// let image= document.createElement('img')
 		// image.src=`${iconArr[j]}`
 		// weatherDiv.replaceWith(image)
-		let printWeather =`<div class="day1">
-                    <h5 class="card-title">${dateArr[j]}</h5>
-					<div class="image">
-                    	<img src="${iconArr[j]}">
-					</div>
-                    <p class="card-text">${highTemperatureArr[j]}º
-                        <span>${lowTemperatureArr[j]}º </span>
-                    </p>                    
-                    <p class="card-text">Chance of Rain: ${chanceOfRainArr[j]}%</p>
-                </div>`
+		let printWeather =`
+		
+                    
+						<div class="day1">
+							<h5 class="card-title">${dateArr[j]}</h5>
+							<div class="image">
+								<img src="${iconArr[j]}">
+							</div>
+							<p class="card-text">${highTemperatureArr[j]}º
+								<span>${lowTemperatureArr[j]}º </span>
+							</p>                    
+							<p class="card-text">Chance of Rain: ${chanceOfRainArr[j]}%</p>
+						</div>
+					
+                `
 		
 		addWeathertoCard += printWeather
+			
 				
 	}
+
 	console.log(addWeathertoCard);
-	weatherContainer.innerHTML = addWeathertoCard
+	weathercard.innerHTML = `
+	
+		
+			<div class="weatherContainer">
+				${addWeathertoCard}
+			</div>
+			`
 
 }
 
@@ -68,7 +91,7 @@ const options = {
 	}
 };
 
-fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=77494&days=3', options)
-	.then(response => response.json())
-	.then(response => logAPI(response))
-	.catch(err => console.error(err));
+// fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=77494&days=3', options)
+// 	.then(response => response.json())
+// 	.then(response => logAPI(response))
+// 	.catch(err => console.error(err));
