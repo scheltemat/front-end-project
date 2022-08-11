@@ -111,6 +111,7 @@ function displayRoute(origin,destination,service,display) {
     .then((result) => {
       display.setDirections(result);
       console.log(result)
+      
     })
     .catch((e) => {
       alert("Could not display directions due to: " + e);

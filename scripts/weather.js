@@ -91,7 +91,3 @@ const options = {
 	}
 };
 
-// fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=77494&days=3', options)
-// 	.then(response => response.json())
-// 	.then(response => logAPI(response))
-// 	.catch(err => console.error(err));
