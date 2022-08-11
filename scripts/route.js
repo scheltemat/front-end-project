@@ -20,8 +20,8 @@ function initMap(){
   const map = new google.maps.Map(
     document.getElementById("map"),
     {
-      zoom: 8,
-      center: { lat: -24.345, lng: 134.46 }, // Australia.
+      zoom: 4,
+      center: { lat: 29.76, lng: -95.36 }, // Australia.
     }
   );
 
