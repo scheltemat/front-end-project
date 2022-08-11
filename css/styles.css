@@ -124,7 +124,7 @@ img{
 }
 
 .card{
-    height: 290px;
+    min-height: 300px;
     background-color: #1B263B;
     color: white;
     text-overflow: ellipsis;

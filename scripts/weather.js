@@ -45,6 +45,11 @@ function logAPI (data){
 	//getting the cards to display on the screen
 	let addWeathertoCard = "";
 	
+	let printCard = document.querySelector(".row")
+    printCard.style.display = "none"
+    let weathercard = document.querySelector('#weather2')
+    weathercard.style.display = "block"
+
 	for(let j=0; j< chanceOfRainArr.length; j++){
 		// let weatherDiv = document.querySelector('.image')
 		// let image= document.createElement('img')
