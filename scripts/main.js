@@ -162,7 +162,7 @@ function printRestaurants(){
    for(let i =0; i < cards.length; i++){
       let eachCard = `
       <div class="col">
-            <div class="card h-100">
+            <div class="card">
                <img src="${cards[i].image}" class="card-img-top" alt="...">
                <div class="card-body">
                <h5 class="card-title">${cards[i].name}</h5>
