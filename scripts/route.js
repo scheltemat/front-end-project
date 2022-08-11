@@ -55,33 +55,11 @@ function initMap(){
 
   google.maps.event.addListener(map, "click", (event) => {
     service.nearbySearch(
-      { location: event.latLng, radius: 1000, type: "restaurant" },
+      { location: event.latLng, radius: 1500, type: "restaurant" },
       (results, status,) => {
         if (status !== "OK" || !results) return;
         addPlaces(results, map);
       });
-
-    // const request = {
-    //   query: "restaurant",
-    //   fields: ["name", "geometry","rating"],
-    //   locationBias: event.latLng
-    // };
-
-    // service = new google.maps.places.PlacesService(map);
-
-    // service.findPlaceFromQuery(request, function(results, status) {
-    //   if (status === google.maps.places.PlacesServiceStatus.OK) {
-    //     for (var i = 0; i < results.length; i++) {
-    //       createMarker(results[i]);
-    //     }
-    //     map.setCenter(results[0].geometry.location);
-    //   }
-    // });
-  
-    // addMarker(event.latLng, map);
-    // placeAd = event.latLng
-    // console.log(event.latLng)
-    // console.log(placeAd)
   });  
 }
 function addPlaces(places, map) {
@@ -115,14 +93,6 @@ function addPlaces(places, map) {
   }
 }
 
-// function createMarker(place = google.maps.places.PlaceResult) {
-//   if (!place.geometry || !place.geometry.location) return;
-
-//   const marker = new google.maps.Marker({
-//     map,
-//     position: place.geometry.location,
-//   });
-// }
 
 function displayRoute(origin,destination,service,display) {
   service
