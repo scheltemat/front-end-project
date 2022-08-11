@@ -5,8 +5,9 @@ let weatherButton = document.getElementById('weather')
 //added a class "end" on inpuut2 section
 // let input = document.querySelector(".end");
 
+
 weatherButton.addEventListener('click', e=>{
-	fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=77494&days=3', options)
+	fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${weatherAd[0]}%2C${weatherAd[1]}&days=3`, options)
 	.then(response => response.json())
 	.then(response => logAPI(response))
 	.catch(err => console.error(err));
