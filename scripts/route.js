@@ -55,6 +55,7 @@ function initMap(){
           weatherAd = []
           weatherAd.push(results[0].geometry.location.lat()) 
           weatherAd.push(results[0].geometry.location.lng()) 
+          console.log(weatherAd)
       }
     })
     if(startID.value != ""&&endID.value != ""){
@@ -148,6 +149,7 @@ function displayRoute(origin,destination,service,display) {
     .then((result) => {
       display.setDirections(result);
       console.log(result)
+      
     })
     .catch((e) => {
       alert("Could not display directions due to: " + e);
