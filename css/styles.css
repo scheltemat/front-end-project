@@ -1,14 +1,19 @@
 body{
     margin: 0px;
     background-color: #778DA9;
+    
+   
 }
 
 .container-fluid{
     padding: 0px;
+    
+    
+   
 }
 
 .header{
-    height: 25vh;
+    height: 100px;
     display: flex;
     padding-left: 20px;
     justify-content: space-between;
@@ -39,11 +44,11 @@ body{
 
 .input1{
    
-    width: 45%;
+    width: 30%;
 }
 
 .input2{
-    width: 45%;
+    width: 30%;
 }
 
 .btn{
@@ -54,6 +59,7 @@ body{
     margin-top: 10px;
     max-height: 450px;
     
+    
 }
 
 
@@ -63,6 +69,7 @@ body{
 
 .map{
     width: 100%;
+    
 }
 
 
@@ -76,14 +83,27 @@ body{
     
 }
 
+.footerContainer{
+    /* position: relative; */
+    min-height: 5vh;
+    /* display:flexbox; */
+    
+    
+    
+
+}
+
 .footer{
-    height: 10vh;
+    height: 100px;
     display: flex;
     padding-right: 50px;
     justify-content: end;
     align-items: center;
     background-color: #0D1B2A;
     color: white;
+    bottom: 0;
+    position: fixed;
+    width:100%;
 }
 .social-icon{
     color: white;
