@@ -8,7 +8,7 @@ body{
 }
 
 .header{
-    height: 25vh;
+    height: 100px;
     display: flex;
     padding-left: 20px;
     justify-content: space-between;
@@ -76,14 +76,24 @@ body{
     
 }
 
+.footerContainer{
+    position: relative;
+    min-height: 20vh;
+    
+
+}
+
 .footer{
-    height: 10vh;
+    height: 50px;
     display: flex;
     padding-right: 50px;
     justify-content: end;
     align-items: center;
     background-color: #0D1B2A;
     color: white;
+    bottom: 0;
+    position: absolute;
+    width:100%;
 }
 .social-icon{
     color: white;
