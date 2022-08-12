@@ -118,7 +118,7 @@ function addPlaces(places, map) {
                     <img src="${place.photos[0].getUrl({maxWidth:150})}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">${place.name}</h5>
-                      <p class="card-text">${place.rating} /n ${place.business_status}</p>
+                      <p class="card-text">${place.rating} \n ${place.business_status}</p>
                     </div>
                   </div>
                 </div>`
