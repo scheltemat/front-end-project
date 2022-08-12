@@ -60,6 +60,7 @@ function logAPI (data){
 		
                     
 						<div class="day1">
+							
 							<h5 class="card-title">${dateArr[j]}</h5>
 							<div class="image">
 								<img src="${iconArr[j]}">
@@ -80,11 +81,14 @@ function logAPI (data){
 	console.log(addWeathertoCard);
 	weathercard.innerHTML = `
 	
-		
+		<div class="weather-header"><h3>Three day forecast for ${data.location.name}</h3>
 			<div class="weatherContainer">
-				${addWeathertoCard}
+				 
+					${addWeathertoCard}
+
 			</div>
-			`
+		</div>
+		`
 
 }
 
