@@ -7,13 +7,10 @@ let startID = document.querySelector("#startLocation")
 let endID = document.querySelector("#endLocation")
 let searchID = document.querySelector("#searchButton")
 
-startID.value
-endID.value
-
 let weatherAd = []
 let placeAd = []
-let pins = []
-
+let foodPins = []
+let gasPins = []
 
 var service;
 
@@ -23,7 +20,7 @@ function initMap(){
     document.getElementById("map"),
     {
       zoom: 4,
-      center: { lat: 39.8283, lng: -98.5795 }, // Australia.
+      center: { lat: 39.8283, lng: -98.5795 }, 
     }
   );
 
@@ -44,8 +41,8 @@ function initMap(){
   searchID.onclick = () =>{
     console.log("running?")
     geocoder = new google.maps.Geocoder();
-    let printCard = document.querySelector(".row")
-    printCard.style.display = "flex"
+    let printFood = document.querySelector("#foodCards")
+    printFood.style.display = "flex"
     let weathercard = document.querySelector('#weather2')
     weathercard.style.display = "none"
 
@@ -71,10 +68,7 @@ function initMap(){
     );
     }
   };
-
   const service = new google.maps.places.PlacesService(map);
-
-
   google.maps.event.addListener(map, "click", (event) => {
     service.nearbySearch(
       { location: event.latLng, radius: 1500, type: "restaurant" },
@@ -84,57 +78,6 @@ function initMap(){
       });
   });  
 }
-function addPlaces(places, map) {
-  // const placesList = document.getElementById("places");
-  for(let A = 0;A<pins.length;A++ ){
-    pins[A].setMap(null);
-  }
-  pins = []
-  let printCard = document.querySelector(".row")
-  printCard.innerHTML = ""
-  for (const place of places) {
-    
-    if(place.rating>=4.5){
-      if (place.geometry && place.geometry.location) {
-        const image = {
-          url: place.icon,
-          size: new google.maps.Size(71, 71),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(25, 25),
-        };
-        console.log(place)
-        pins.push(new google.maps.Marker({
-          map,
-          icon: image,
-          title: place.name,
-          position: place.geometry.location,
-        })
-        );
-        
-        let eachCard =`
-            <div class="col">
-                  <div class="card h-100">
-                    <img src="${place.photos[0].getUrl({maxWidth:150})}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">${place.name}</h5>
-                      <p class="card-text">${place.rating} \n ${place.business_status}</p>
-                    </div>
-                  </div>
-                </div>`
-            printCard.innerHTML += eachCard
-      }
-      // const li = document.createElement("li");
-
-      // li.textContent = place.name;
-      // placesList.appendChild(li);
-      // li.addEventListener("click", () => {
-      //   map.setCenter(place.geometry.location);
-      // });
-    }
-  }
-}
-
 
 function displayRoute(origin,destination,service,display) {
   service
@@ -178,6 +121,104 @@ function computeTotalDistance(result) {
   (document.getElementById("total")).innerHTML = total.toFixed(1) + " miles";
 }
 
+function addPlaces(places, map) {
+  // const placesList = document.getElementById("places");
+  for(let A = 0;A<foodPins.length;A++ ){
+    foodPins[A].setMap(null);
+  }
+  foodPins = []
+  let printFood = document.querySelector(".row")
+  printFood.innerHTML = ""
+  let B = 0
+  for (const place of places) {
+    
+    if(place.rating>=4.5){
+      if (place.geometry && place.geometry.location) {
+        const image = {
+          url: place.icon,
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(25, 25),
+        };
+        console.log(place)
+        foodPins.push(new google.maps.Marker({
+          map,
+          icon: image,
+          title: place.name,
+          position: place.geometry.location,
+        })
+        );
+        // const contentString = `<div>${place.name}</div>`
+        // const infowindow = new google.maps.InfoWindow({
+        //   content: contentString,
+        // });
+        // console.log(foodPins[B])
+        // console.log(infowindow)
+        // foodPins[B].addListener("click", () => {
+        //   console.log("clicked")
+        //   console.log(B)
+        //   infowindow.open({
+        //     anchor: foodPins[B],
+        //     map,
+        //     shouldFocus: false,
+        //   });
+        // });
+      
+
+        
+        let eachCard =`
+                <div class="col">
+                  <div class="card h-100" id="${B}" onclick="cardClickFun(this.id,this)">
+                    <img src="${place.photos[0].getUrl({maxWidth:150})}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">${place.name}</h5>
+                      <p class="card-text">${place.rating} /n ${place.business_status}</p>
+                    </div>
+                  </div>
+                </div>`
+        printFood.innerHTML += eachCard
+        B++
+      }
+      // const li = document.createElement("li");
+
+      // li.textContent = place.name;
+      // placesList.appendChild(li);
+      // li.addEventListener("click", () => {
+      //   map.setCenter(place.geometry.location);
+      // });
+    }
+  }
+  for(let B = 0; B<foodPins.length;B++){
+    const contentString = `<div>${foodPins[B].title}</div>`
+    const infowindow = new google.maps.InfoWindow({
+      content: contentString,
+    });
+    console.log(foodPins[B])
+    console.log(infowindow)
+    foodPins[B].addListener("click", () => {
+      console.log("clicked")
+      console.log(B)
+      infowindow.open({
+        anchor: foodPins[B],
+        map,
+        shouldFocus: false,
+      });
+    });
+  }
+}
+
+const cardClickFun = (id,card) =>{
+  if (foodPins[id].getAnimation() == google.maps.Animation.BOUNCE) {
+    foodPins[id].setAnimation(null);
+    card.style = ""
+  }
+  else{
+   foodPins[id].setAnimation(google.maps.Animation.BOUNCE);
+   console.log("clicked")
+   card.style = "backround-color : #0e57de"
+  }
+}
 // function addMarker(location, map) {
 //   // Add the marker at the clicked location, and add the next-available label
 //   // from the array of alphabetical characters.
