@@ -79,6 +79,59 @@ function initMap(){
   });  
 }
 
+function addPlaces(places, map) {
+  // const placesList = document.getElementById("places");
+  for(let A = 0;A<pins.length;A++ ){
+    pins[A].setMap(null);
+  }
+  pins = []
+  let printCard = document.querySelector(".row")
+  printCard.innerHTML = ""
+  for (const place of places) {
+    
+    if(place.rating>=4.5){
+      if (place.geometry && place.geometry.location) {
+        const image = {
+          url: place.icon,
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(25, 25),
+        };
+        console.log(place)
+        pins.push(new google.maps.Marker({
+          map,
+          icon: image,
+          title: place.name,
+          position: place.geometry.location,
+        })
+        );
+        
+        let eachCard =`
+            <div class="col">
+                  <div class="card h-100">
+                    <img src="${place.photos[0].getUrl({maxWidth:150})}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">${place.name}</h5>
+                      <p class="card-text">${place.rating} \n ${place.business_status}</p>
+                    </div>
+                  </div>
+                </div>`
+            printCard.innerHTML += eachCard
+      }
+      // const li = document.createElement("li");
+
+      // li.textContent = place.name;
+      // placesList.appendChild(li);
+      // li.addEventListener("click", () => {
+      //   map.setCenter(place.geometry.location);
+      // });
+    }
+  }
+}
+
+
+
 function displayRoute(origin,destination,service,display) {
   service
     .route({
