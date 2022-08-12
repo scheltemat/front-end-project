@@ -7,13 +7,9 @@ let startID = document.querySelector("#startLocation")
 let endID = document.querySelector("#endLocation")
 let searchID = document.querySelector("#searchButton")
 
-startID.value
-endID.value
-
 let weatherAd = []
 let placeAd = []
 let pins = []
-
 
 var service;
 
@@ -23,7 +19,7 @@ function initMap(){
     document.getElementById("map"),
     {
       zoom: 4,
-      center: { lat: 39.8283, lng: -98.5795 }, // Australia.
+      center: { lat: 39.8283, lng: -98.5795 }, 
     }
   );
 
