@@ -1,6 +1,6 @@
 body{
     margin: 0px;
-    background-color: #778DA9;
+    background-color: #415A77;
     
    
 }
@@ -27,6 +27,7 @@ body{
    align-items: center;
    justify-content: center;
    padding-top: 10px;
+   background-color: #778DA9;
   
 }
 
@@ -36,6 +37,7 @@ body{
     justify-content: space-around;
     align-items: center;
     padding: 0px 10px 0px 10px;
+    background-color: #778DA9;
 }
 
 .form-control{
@@ -56,7 +58,7 @@ body{
 }
 
 .map-container{
-    margin-top: 10px;
+    /* margin-top: 10px; */
     max-height: 450px;
     
     
@@ -86,6 +88,7 @@ body{
 .footerContainer{
     /* position: relative; */
     min-height: 5vh;
+    margin-top: 70px;
     /* display:flexbox; */
     
     
@@ -158,10 +161,17 @@ img{
    justify-content: space-evenly;
    padding-top: 2%;
    padding-bottom: 2%;
-   background-image: url("https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80");
-   background-repeat: no-repeat;
-   background-size: 100%;
-   background-color: #415A77;
+   color: white;
+  
+}
+
+.weather-header{
+    padding-top: 20px;
+    text-align: center;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMcb0nyFRQpZUvkS8tw0K0qBjpa6a4VrEhEw&usqp=CAU");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
 }
 
 .card{

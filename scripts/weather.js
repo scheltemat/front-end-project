@@ -80,11 +80,14 @@ function logAPI (data){
 	console.log(addWeathertoCard);
 	weathercard.innerHTML = `
 	
-		
+		<div class="weather-header"><h3>Three day forecast for ${data.location.name}</h3>
 			<div class="weatherContainer">
-				${addWeathertoCard}
+				 
+					${addWeathertoCard}
+
 			</div>
-			`
+		</div>
+		`
 
 }
 
