@@ -67,6 +67,7 @@ body{
 
 #sidebar{
     background-color: #E0E1DD;
+    display: none;
 }
 
 .map{

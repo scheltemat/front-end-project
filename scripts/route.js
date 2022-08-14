@@ -43,13 +43,13 @@
      }
    });
    searchID.onclick = () =>{
-     console.log("running?")
      geocoder = new google.maps.Geocoder();
      let printCard = document.querySelector(".row")
      printCard.style.display = "flex"
      let weathercard = document.querySelector('#weather2')
      weathercard.style.display = "none"
- 
+    let sidebar = document.querySelector("#sidebar")
+    sidebar.style.display = "flex"
      let address = endID.value
      geocoder.geocode( { 'address': address}, function(results, status) {
      
@@ -74,7 +74,6 @@
    };
  
    const service = new google.maps.places.PlacesService(map);
- 
  
    google.maps.event.addListener(map, "click", (event) => {
      service.nearbySearch(
@@ -144,8 +143,6 @@
     console.log(foodPins[B])
     console.log(infowindow)
     foodPins[B].addListener("click", () => {
-      console.log("clicked")
-      console.log(B)
       infowindow.open({
         anchor: foodPins[B],
         map,
@@ -157,12 +154,12 @@
 const cardClickFun = (id,card) =>{
   if (foodPins[id].getAnimation() == google.maps.Animation.BOUNCE) {
     foodPins[id].setAnimation(null);
-    card.style = ""
+    // card.style = ""
   }
   else{
    foodPins[id].setAnimation(google.maps.Animation.BOUNCE);
    console.log("clicked")
-   card.style = "backround-color : #0e57de"
+  //  card.style = "backround-color : #0e57de"
   }
 }
  
