@@ -3,7 +3,7 @@
 
 ## About The Site
 ***
-* Along the Way is an interactive website that allows the user to input a destination and find restaurants, gas stations, or weather after selecting a route. It is best used when you select a route and click somewhere along/near the route to find places that are not out of the way. The webpage uses remote API data to populate a list of potential places you might want to visit if you're planning a road trip.
+* Along the Way is an interactive website that allows the user to input a destination and find restaurants or weather after selecting a route. It is best used when you select a route and click somewhere along/near the route to find places that are not out of the way. The webpage uses remote API data to populate a list of potential places you might want to visit if you're planning a road trip.
 
 ## View The Demo 
 ***
@@ -42,7 +42,7 @@
 
 ## Future Stretch Goals
 ***
-* Getting the gas button to work to display gas stations 
+* Making a button for gas stations to display gas info in cards
 * CSS could look better
 * Adding more functionality, i.e. retrieving more info on locations, clicking a pin on the map scrolls you down to the card, etc.
 
