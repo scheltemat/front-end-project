@@ -49,7 +49,8 @@
      printCard.style.display = "flex"
      let weathercard = document.querySelector('#weather2')
      weathercard.style.display = "none"
- 
+     let sidebar = document.querySelector('#sidebar')
+     sidebar.style.display = "flex"
      let address = endID.value
      geocoder.geocode( { 'address': address}, function(results, status) {
      
