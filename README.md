@@ -8,11 +8,9 @@
 ## View The Demo 
 ***
 
+![Screenshot](demo.png)
 
-
-< - demo video will go here - >
-
-< - screenshots here - >
+[View Demo](https://drive.google.com/file/d/1BPnQKar0nPot_Hsd5yfDvGYckuqWlVq7/view?usp=sharing)
 
 
 ## Built With
@@ -23,9 +21,10 @@
 * Javascript
 ### APIs:
 * Google Maps API
-* Rapid API (weather)
 * Google Places API 
 * Google Geocaching API 
+* Rapid API (weather)
+
 ## MVP (Minimum Viable Product)
 ***
 * Designing a webpage to handle all of the data we need from our APIs
@@ -40,6 +39,12 @@
 * Getting waypoints to show up on map when you click on it 
 * Clicking on card makes map pin highlight and jump
 * Buttons don't stack info, i.e. clicking on restaurants after clicking on weather will override the weather and make it disappear, only showing restaurants
+
+## Future Stretch Goals
+***
+* Getting the gas button to work to display gas stations 
+* CSS could look better
+* Adding more functionality, i.e. retrieving more info on locations, clicking a pin on the map scrolls you down to the card, etc.
 
 
 ## Our Team
