@@ -7,9 +7,7 @@ body{
 
 .container-fluid{
     padding: 0px;
-    
-    
-   
+
 }
 
 .header{
@@ -28,7 +26,6 @@ body{
    justify-content: center;
    padding-top: 10px;
    background-color: #778DA9;
-  
 }
 
 .input-container{
@@ -60,10 +57,7 @@ body{
 .map-container{
     /* margin-top: 10px; */
     max-height: 450px;
-    
-    
 }
-
 
 #sidebar{
     background-color: #E0E1DD;
@@ -74,7 +68,6 @@ body{
     width: 100%;
     
 }
-
 
 .accordion-container{
     display: flex;
@@ -163,8 +156,6 @@ img{
    padding-top: 2%;
    padding-bottom: 2%;
    color: white
-   
-
 }
 
 .weather-header{
