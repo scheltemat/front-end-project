@@ -1,7 +1,7 @@
 let printCard = document.querySelector(".row")
 
 const placesFetch = async (location)=>{
-    let results = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=food&location=${location}&radius=3000&type=restaurant&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry%2Cphotos&key=AIzaSyDs76VeBs3S5YCAJfu_KkiepYooAYIX12k`)
+    let results = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=food&location=${location}&radius=3000&type=restaurant&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry%2Cphotos&key=`)
     if (!results.ok) {
         throw new Error(`An error occurred: ${results.status}`);
     }
@@ -9,12 +9,12 @@ const placesFetch = async (location)=>{
     return await results.json();
 
 }
-// `https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=food&location=49.8880%2C-119.4960&radius=1000&type=restaurant&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry%2Cphotos&key=AIzaSyDs76VeBs3S5YCAJfu_KkiepYooAYIX12k`
+// `https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=food&location=49.8880%2C-119.4960&radius=1000&type=restaurant&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry%2Cphotos&key=`
 
 //business_status,name,opening hours: periods/weekday_text,photos,rating,geometry
 
 const photosFetch = async (ref)=>{
-    let results = await fetch(`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${ref}&key=AIzaSyDs76VeBs3S5YCAJfu_KkiepYooAYIX12k`)
+    let results = await fetch(`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${ref}&key=`)
     if (!results.ok) {
         throw new Error(`An error occurred: ${results.status}`);
     }
